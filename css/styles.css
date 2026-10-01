@@ -1,0 +1,584 @@
+:root {
+    --bg-dark: #0e1420;
+    --gold: #d9a441;
+    --gold-light: #f0c674;
+    --text-light: #f0f4f8;
+    --text-muted: #c2cad6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(14, 20, 32, 0.88) 0%,
+            rgba(14, 20, 32, 0.55) 45%,
+            rgba(14, 20, 32, 0.15) 100%
+        ),
+        url("../images/hero-figure.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: flex-start;
+
+    padding: 10vh 0 0 6%;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 1.05;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    color: var(--gold-light);
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    font-weight: 600;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.85rem 1.5rem;
+    border-radius: 6px;
+
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: transform 0.2s ease,
+                background-color 0.2s ease,
+                color 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--gold);
+    color: var(--bg-dark);
+}
+
+.btn-secondary {
+    border: 2px solid var(--text-light);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background-color: var(--gold-light);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    background-color: var(--text-light);
+    color: var(--bg-dark);
+}
+
+/* DECORATIVE ABOUT FRAME */
+.about-frame {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 24px;
+
+    position: relative;
+
+    background-color: var(--bg-dark);
+}
+
+/* Top and bottom pattern */
+
+.about-frame::before,
+.about-frame::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    width: 100%;
+    height: 20px;
+
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 42%,
+            var(--gold) 42%,
+            var(--gold) 48%,
+            transparent 48%
+        ),
+        linear-gradient(
+            -45deg,
+            transparent 42%,
+            var(--gold) 42%,
+            var(--gold) 48%,
+            transparent 48%
+        );
+
+    background-size: 48px 32px;
+}
+
+.about-frame::before {
+    top: 0;
+}
+
+.about-frame::after {
+    bottom: 0;
+}
+
+/* Left and right zigzag */
+
+.frame-side {
+    position: absolute;
+
+    width: calc(100% - 40px);
+    height: 20px;
+
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 42%,
+            var(--gold) 42%,
+            var(--gold) 48%,
+            transparent 48%
+        ),
+        linear-gradient(
+            -45deg,
+            transparent 42%,
+            var(--gold) 42%,
+            var(--gold) 48%,
+            transparent 48%
+        );
+
+    background-size: 48px 32px;
+
+    top: 50%;
+    transform-origin: center;
+}
+
+.frame-side-left {
+    left: calc(-50% + 10px);
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.frame-side-right {
+    right: calc(-50% + 10px);
+    transform: translateY(-50%) rotate(90deg);
+}
+
+
+/* ABOUT */
+
+.about {
+    background-color: var(--bg-dark);
+    padding: 3rem 0 4rem;
+}
+
+.about-container {
+    max-width: 1600px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.75fr 1.15fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+.about-content {
+    max-width: 600px;
+}
+
+.section-label {
+    color: var(--gold-light);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    margin-bottom: 1rem;
+}
+
+.about-content h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+}
+
+.about-content > p:not(.section-label) {
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+}
+
+/* WHERE TO NEXT */
+
+.next-step {
+    background-color: var(--bg-dark);
+    padding: 1rem 8% 6rem;
+    text-align: center;
+}
+
+.next-step-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.next-step h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+.next-step-text {
+    color: var(--text-muted);
+    max-width: 650px;
+    margin: 0 auto 2rem;
+}
+
+.next-step-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* RESUME PAGE */
+
+.resume-page {
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+}
+
+.resume-header {
+    padding: 4rem 8% 3rem;
+    border-bottom: 1px solid rgba(217, 164, 65, 0.3);
+}
+
+.resume-header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.resume-back {
+    display: inline-block;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-bottom: 3rem;
+}
+
+.resume-back:hover {
+    color: var(--gold-light);
+}
+
+.resume-heading h1 {
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+}
+
+.resume-title {
+    color: var(--gold-light);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12rem;
+    font-weight: 600;
+}
+
+.resume-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+/* RESUME CONTENT */
+
+.resume-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 8%;
+}
+
+.resume-section {
+    margin-bottom: 4rem;
+}
+
+.resume-summary {
+    max-width: 900px;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* TECHNICAL SKILLS */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.skill-group {
+    padding: 1.5rem;
+    border: 1px solid rgba(217, 164, 65, 0.25);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.skill-group h3 {
+    color: var(--gold-light);
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+}
+
+.skill-group p {
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* CERTIFICATIONS & EDUCATION */
+
+.resume-credentials {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.resume-credentials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.credential-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(217, 164, 65, 0.35);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.credential-card h3 {
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+.credential-card p {
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+}
+
+.credential-card strong {
+    color: var(--text-light);
+}
+
+ /* PROFESSIONAL & TECHNICAL EXPERIENCE */
+
+.resume-experience {
+    margin-top: 2rem;
+}
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.experience-card {
+    padding: 1.75rem;
+    border: 1px solid rgba(217, 164, 65, 0.25);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+.experience-card h3 {
+    color: var(--gold-light);
+    font-size: 1.15rem;
+    margin-bottom: 0.25rem;
+}
+
+.experience-company {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.experience-company span {
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.experience-date {
+    color: var(--gold-light);
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.experience-details {
+    padding-left: 1.25rem;
+    color: var(--text-muted);
+}
+
+.experience-details li {
+    margin-bottom: 0.65rem;
+    line-height: 1.7;
+}
+
+.experience-details li:last-child {
+    margin-bottom: 0;
+}
+
+/* RESUME FOOTER */
+
+.resume-footer {
+    margin-top: 5rem;
+    padding: 4rem 0 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(217, 164, 65, 0.25);
+}
+
+.resume-footer h2 {
+    margin-top: 0.5rem;
+    color: var(--text-light);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.resume-footer > p:not(.section-label) {
+    max-width: 650px;
+    margin: 1rem auto 0;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.resume-footer-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+    .hero {
+        padding: 0 6%;
+        background-position: 60% center;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.7rem, 12vw, 4rem);
+    }
+
+        .about {
+        padding: 3rem 0 4rem;
+    }
+
+    .about-frame {
+        padding: 20px 6%;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-image img {
+        width: 100%;
+    }
+
+    .about-content {
+        max-width: none;
+    }
+        .resume-header {
+        padding: 3rem 6% 2.5rem;
+    }
+
+    .resume-content {
+        padding: 3rem 6%;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+.experience-header {
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.experience-card {
+    padding: 1.4rem;
+}
+
+.experience-date {
+    white-space: normal;
+}
+
+    
+}
