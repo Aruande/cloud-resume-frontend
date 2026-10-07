@@ -523,6 +523,210 @@ body {
     margin-top: 2rem;
 }
 
+/* =========================
+   PROJECTS PAGE
+   ========================= */
+
+.projects-hero {
+    min-height: 52vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 8%;
+    background-color: var(--bg-dark);
+}
+
+.projects-hero-content {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.projects-hero .back-link {
+    display: inline-block;
+    margin-bottom: 4rem;
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.projects-hero .back-link:hover {
+    text-decoration: underline;
+}
+
+.projects-hero .section-label {
+    margin-bottom: 1rem;
+}
+
+.projects-hero h1 {
+    max-width: 900px;
+    margin: 0 0 1.5rem;
+    font-size: clamp(2.75rem, 6vw, 5.5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.projects-intro {
+    max-width: 760px;
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+}
+
+/* Featured Project */
+
+.featured-project {
+    padding: 2rem 8% 7rem;
+    background-color: var(--bg-dark);
+}
+
+.project-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+}
+
+.featured-project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.featured-project-header h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.project-status {
+    padding: 0.45rem 0.9rem;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.project-summary {
+    max-width: 800px;
+    margin-bottom: 2.5rem;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.architecture-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.architecture-block {
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+}
+
+.architecture-label {
+    margin: 0 0 0.75rem;
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.architecture-flow {
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+.project-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+}
+
+.project-details h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.project-details p {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Secondary Project */
+
+.project-section {
+    padding: 0 8% 7rem;
+    background-color: var(--bg-dark);
+}
+
+.secondary-project {
+    padding: 3.5rem;
+}
+
+.secondary-project-header {
+    margin-bottom: 2.5rem;
+}
+
+.secondary-project-header h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.1;
+}
+
+.project-number {
+    margin-bottom: 1.25rem;
+}
+
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.lab-card {
+    padding: 1.75rem;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+}
+
+.lab-card h3 {
+    margin: 0 0 0.9rem;
+    font-size: 1.15rem;
+    line-height: 1.4;
+}
+
+.lab-card p:last-child {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.75;
+}
+
+.secondary-details {
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* MOBILE */
 
 @media (max-width: 700px) {
@@ -580,5 +784,103 @@ body {
     white-space: normal;
 }
 
+/* Projects page mobile */
+
+.projects-hero {
+    min-height: auto;
+    padding: 4rem 6% 3rem;
+}
+
+.projects-hero .back-link {
+    margin-bottom: 3rem;
+}
+
+.projects-hero h1 {
+    font-size: clamp(2.6rem, 13vw, 4rem);
+    line-height: 1.05;
+}
+
+.projects-intro {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.featured-project {
+    padding: 1rem 6% 4rem;
+}
+
+.project-container {
+    padding: 1.5rem;
+    border-radius: 14px;
+}
+
+.featured-project-header {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.featured-project-header h2 {
+    font-size: 2rem;
+    line-height: 1.15;
+}
+
+.project-status {
+    align-self: flex-start;
+}
+
+.project-summary {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.architecture-grid {
+    grid-template-columns: 1fr;
+}
+
+.project-details {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.architecture-flow {
+    overflow-wrap: anywhere;
+}
+
+.project-links {
+    flex-direction: column;
+}
+
+.project-links .btn {
+    width: 100%;
+    text-align: center;
+}
+
+/* Secondary project mobile */
+
+.project-section {
+    padding: 0 6% 4rem;
+}
+
+.secondary-project {
+    padding: 1.5rem;
+}
+
+.secondary-project-header h2 {
+    font-size: 2rem;
+    line-height: 1.15;
+}
+
+.lab-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.lab-card {
+    padding: 1.5rem;
+}
+
+.secondary-details {
+    padding-top: 2rem;
+}
     
 }
