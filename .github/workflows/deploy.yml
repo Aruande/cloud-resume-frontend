@@ -1,0 +1,45 @@
+
+name: Deploy Cloud Resume Frontend
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy Website to AWS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::841162710990:role/GitHubActionsCloudResumeDeployRole
+          aws-region: us-east-1
+
+      - name: Preview website deployment to S3
+        run: |
+          aws s3 sync . s3://marrio-hinkle-cloud-resume/ \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude ".gitignore" \
+            --exclude "README.md" \
+            --exclude ".DS_Store" \
+            --exclude "*/.DS_Store" \
+            --delete --dryrun
+
+      - name: Invalidate CloudFront cache
+        if: ${{ false }}
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id E2TCRHBRK4EQ26 \
+            --paths "/*"
