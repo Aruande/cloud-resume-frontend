@@ -4,6 +4,8 @@
 
 **Live Website:** https://marriohinkle.com
 
+**Backend Repository:** https://github.com/Aruande/cloud-resume-backend
+
 ## Overview
 
 This repository contains the frontend of my AWS Cloud Resume Challenge project: a responsive personal portfolio built with HTML, CSS, and JavaScript and deployed using AWS cloud services.
