@@ -6,6 +6,8 @@
 
 **Backend Repository:** https://github.com/Aruande/cloud-resume-backend
 
+**Technical Blog Post:** [From Cloud Computing Student to Cloud Builder: My AWS Cloud Resume Challenge Journey](https://dev.to/aruande/from-cloud-computing-student-to-cloud-builder-my-aws-cloud-resume-challenge-journey-7b9)
+
 ## Overview
 
 This repository contains the frontend of my AWS Cloud Resume Challenge project: a responsive personal portfolio built with HTML, CSS, and JavaScript and deployed using AWS cloud services.
